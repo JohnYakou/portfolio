@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+    <body class="contacter" style="background-image: url({{ asset('assets/email.jpg') }}); background-size:cover; no-repeat">
+        
+            <div class="container">
+                <div class="row">
+                <div class="pageContact">
+                    <div>
+                        <h1 class="text-center">Contactez-moi</h1>
+                        {{form(contactForm)}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {# FOOTER #}
+        <footer class="footerContact" style="background:#0b486b">
+            <div class="container">
+                <div class="d-flex justify-content-evenly">
+                    <p class="text-center text-white"><strong>© YAKOU John | Tous droit réservés</strong></p>
+
+                    <div class="d-flex justify-content-between">
+                        <a type="button" href="https://github.com/JohnYakou?tab=repositories" target="_blank"><i class="fa-brands fa-github-square logoFontAwesome"></i></a>
+
+                        <a type="button" href="https://www.linkedin.com/in/john-yakou-8633b41a1/" target="_blank"><i class="fa-brands fa-linkedin logoFontAwesome"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+{% endblock %}

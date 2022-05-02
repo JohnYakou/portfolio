@@ -1,0 +1,251 @@
+{% extends 'base.html.twig' %} 
+{% block title %}Compétences{% endblock %} 
+
+{% block body %}
+<body class="bodyAllLangage">
+  <section class="container">
+      <div class="boutonsCompetences">
+        <a type="button" class="btn btn-success m-5" href="#langages">Langages</a>
+        <a type="button" class="btn btn-success m-5" href="#frameworks">Frameworks</a>
+        <a type="button" class="btn btn-success m-5" href="#outils">CMS et outils</a>
+      </div>
+
+      <br>
+
+      <h1 id="langages" class="text-center text-white competence">Langages</h1>
+      
+        <div class="row competences">
+          {% for langage in langage %}
+          <div class="card col-md-2 m-3" style="width: 18rem">
+            <img
+              style="width: 150; height: 15rem"
+              src="{{asset('uploads/logo/' ~ langage.logo)}}"
+            />
+            <div class="card-body">
+              <h5 class="card-title text-center">{{ langage.langage }}</h5>
+              
+              {# PROGRESS HTML / CSS #} 
+              {% if langage.langage == 'HTML / CSS' %}
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  style="width: 90%"
+                  aria-valuenow="90"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              {% endif %}
+              
+              {# PROGRESS PHP #} 
+              {% if langage.langage == 'PHP' %}
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  style="width: 70%"
+                  aria-valuenow="70"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              {% endif %} 
+              
+              {# PROGRESS MySQL #} 
+              {% if langage.langage == 'MySQL' %}
+              <div class="progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  style="width: 85%"
+                  aria-valuenow="85"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              {% endif %} 
+              
+              {% if is_granted ("ROLE_ADMIN") %}
+              <div class="d-flex p-3 justify-content-between">
+
+                <a 
+                  class="btn btn-danger" 
+                  href="{{ path('app_langage_delete',{id: langage.id}) }}" 
+                  onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce langage ?')"
+                  >Supprimer</a
+                >
+
+                <a
+                  href="{{ path('app_langage_edit', { id: langage.id }) }}"
+                  class="btn btn-warning"
+                  >Modifier</a
+                >
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          {% endfor %}
+    </section>
+
+  <br><br>
+  {# FRAMEWORKS #}
+  <h1 id="frameworks" class="text-center text-white competence">Frameworks</h1>
+
+    <section class="container">
+    <div class="row competences">
+      {% for framework in framework %}
+      <div class="card col-md-5 m-3" style="width: 18rem">
+        <img
+          style="width: 150; height: 15rem"
+          src="{{asset('uploads/logo/' ~ framework.logo)}}"
+        />
+        <div class="card-body">
+          <h5 class="card-title text-center">{{ framework.framework }}</h5>
+
+          {# PROGRESS SYMFONY #} 
+            {% if framework.framework == 'Symfony' %}
+            <div class="progress">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                style="width: 90%"
+                aria-valuenow="90"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+            {% endif %}
+
+            {# PROGRESS BT #} 
+            {% if framework.framework == 'Bootstrap' %}
+            <div class="progress">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                style="width: 95%"
+                aria-valuenow="95"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+            {% endif %}
+          
+          {% if is_granted ("ROLE_ADMIN") %}
+          <div class="d-flex p-3 justify-content-between">
+            <a 
+              class="btn btn-danger" 
+              href="{{ path('app_framework_delete',{id: framework.id}) }}" 
+              onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce framework ?')"
+              >Supprimer</a
+            >
+
+            <a
+              href="{{ path('app_framework_edit', { id: framework.id }) }}"
+              class="btn btn-warning"
+              >Modifier</a
+            >
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+  </section>
+  {# FIN FRAMEWORKS #}
+
+  <br><br>
+  {# DEBUT OUTIL #}
+  <h1 id="outils" class="text-center text-white competence">CMS et outils</h1>
+
+    <section class="container">
+    <div class="row competences">
+      {% for outil in outil %}
+      <div class="card col-md-3 m-3" style="width: 18rem">
+        <img
+          style="width: 150; height: 15rem"
+          src="{{asset('uploads/logo/' ~ outil.logo)}}"
+        />
+        <div class="card-body">
+          <h5 class="card-title text-center">{{ outil.outil }}</h5>
+          
+            {# PROGRESS WordPress #} 
+            {% if outil.outil == 'WordPress' %}
+            <div class="progress">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                style="width: 80%"
+                aria-valuenow="80"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+            {% endif %}
+
+            {# PROGRESS GitKraken #} 
+            {% if outil.outil == 'GitKraken' %}
+            <div class="progress">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                style="width: 100%"
+                aria-valuenow="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+            {% endif %} 
+
+            {# PROGRESS Git #} 
+            {% if outil.outil == 'Git' %}
+            <div class="progress">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                style="width: 100%"
+                aria-valuenow="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+            {% endif %} 
+
+          {% if is_granted ("ROLE_ADMIN") %}
+          <div class="d-flex p-3 justify-content-between">
+
+            <a 
+              class="btn btn-danger" 
+              href="{{ path('app_outil_delete',{id: outil.id}) }}" 
+              onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet outil ?')"
+              >Supprimer</a
+            >
+
+            <a
+              href="{{ path('app_outil_edit', { id: outil.id }) }}"
+              class="btn btn-warning"
+              >Modifier</a
+            >
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+  </section>
+  {# FIN OUTIL #}
+
+  {# FOOTER #}
+  <footer style="background:#0b486b">
+    <div class="container">
+      <div class="d-flex justify-content-evenly">
+        <p class="text-center text-white"><strong>© YAKOU John | Tous droit réservés</strong></p>
+
+        <div class="d-flex justify-content-between">
+            <a type="button" href="https://github.com/JohnYakou?tab=repositories" target="_blank"><i class="fa-brands fa-github-square logoFontAwesome"></i></a>
+
+            <a type="button" href="https://www.linkedin.com/in/john-yakou-8633b41a1/" target="_blank"><i class="fa-brands fa-linkedin logoFontAwesome"></i></a>
+          </div>
+        </div>
+      </div>
+  </footer>
+</body>
+{% endblock %}

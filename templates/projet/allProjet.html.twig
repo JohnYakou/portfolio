@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %} 
+{% block title %}Mes projets{% endblock %} 
+
+{% block body %}
+    <body class="bodyAllLangage">
+        <section class="container">
+            {# <div class="boutonsCompetences">
+                <a type="button" class="btn btn-success m-5" href="#langages">Langages</a>
+                <a type="button" class="btn btn-success m-5" href="#frameworks">Frameworks</a>
+                <a type="button" class="btn btn-success m-5" href="#outils">CMS et outils</a>
+            </div> #}
+
+            <br>
+
+            <h1 class="text-center text-white competence">Projets</h1>
+            
+                <div class="row competences">
+                {% for projet in projet %}
+                <div class="card col-md-2 m-3" style="width: 18rem">
+                    <img
+                    style="width: 150; height: 22.5rem"
+                    src="{{asset('uploads/image/' ~ projet.image)}}"
+                    />
+                    <div class="card-body">
+                    <h5 class="card-title text-center">{{ projet.nom }}</h5>
+
+                    <div class="text-center">
+                        <a
+                        href="{{ path('app_solo_projet', { id: projet.id }) }}"
+                        class="btn btn-success"
+                        target="_blank"
+                        >Voir</a
+                        >
+                    </div>
+                    
+                    {% if is_granted ("ROLE_ADMIN") %}
+                    <div class="d-flex p-3 justify-content-between">
+
+                        <a 
+                        class="btn btn-danger" 
+                        href="{{ path('app_projet_delete',{id: projet.id}) }}" 
+                        onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce projet ?')"
+                        >Supprimer</a
+                        >
+
+                        <a
+                        href="{{ path('app_projet_edit', { id: projet.id }) }}"
+                        class="btn btn-warning"
+                        >Modifier</a
+                        >
+                    </div>
+                    {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+        </section>
+
+            <footer style="background:#0b486b">
+                <div class="container">
+                    <div class="d-flex justify-content-evenly">
+                        <p class="text-center text-white"><strong>© YAKOU John | Tous droit réservés</strong></p>
+
+                        <div class="d-flex justify-content-between">
+                            <a type="button" href="https://github.com/JohnYakou?tab=repositories" target="_blank"><i class="fa-brands fa-github-square logoFontAwesome"></i></a>
+
+                            <a type="button" href="https://www.linkedin.com/in/john-yakou-8633b41a1/" target="_blank"><i class="fa-brands fa-linkedin logoFontAwesome"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </body>
+{% endblock %}

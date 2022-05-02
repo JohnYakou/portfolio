@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{projet.nom}}{% endblock %}
+
+{% block body %}
+<h1 class="text-center text-danger">{{projet.nom}}</h1>
+
+<div class="container">
+
+  <div class="card mb-3">
+        <img
+            style="width: 150; height: 100rem"
+            src="{{asset('uploads/image/' ~ projet.image)}}"
+        />
+
+    {# <div class="card-body">
+      <h5 class="card-title text-center">Classe : {{eleves.classe}}</h5>
+      <p class="card-text text-center">Talent : {{eleves.talent}}</p>
+      <p class="card-text text-center">Mail : {{eleves.mail}}</p>
+    </div> #}
+  </div>
+
+    {# FOOTER #}
+    <footer style="background:#0b486b">
+        <div class="container">
+            <div class="d-flex justify-content-evenly">
+                <p class="text-center text-white"><strong>© YAKOU John | Tous droit réservés</strong></p>
+
+                <div class="d-flex justify-content-between">
+                    <a type="button" href="https://github.com/JohnYakou?tab=repositories" target="_blank"><i class="fa-brands fa-github-square logoFontAwesome"></i></a>
+
+                    <a type="button" href="https://www.linkedin.com/in/john-yakou-8633b41a1/" target="_blank"><i class="fa-brands fa-linkedin logoFontAwesome"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

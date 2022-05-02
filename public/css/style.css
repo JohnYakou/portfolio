@@ -1,0 +1,99 @@
+/* templates/experience/index.html.twig */
+.apropos{
+    border: 10px solid #0b486b;
+    border-radius: 1.5rem;
+    font-size: 1.5rem;
+    color: #0b486b;
+    background-color: rgba(255, 255, 255, 0.842);
+    margin-top: 9.5rem;
+    padding: 1.5rem;
+}
+
+.nav-link{
+    color: white;
+    font-size: 1.2rem;
+}
+
+.navbar-toggler{
+    background: rgb(66, 66, 66);
+}
+
+.pageContact{
+    margin-top: 10rem;
+    background-color: #0b486bc7;
+    border-radius: 1rem;
+}
+
+.pageContact, .form-control{
+    font-weight: bold;
+    color: white;
+}
+
+/* templates/langage/allLangage.html.twig */
+.bodyAllLangage{
+    background-color: black;
+}
+
+.competence{
+    text-decoration: overline;
+}
+
+.boutonsCompetences{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.competences{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.progress-bar{
+    background: #3BFF23;
+}
+
+.logoFontAwesome{
+    font-size: 2.5rem;
+    color: white;
+}
+
+.logoFontAwesome:hover{
+    color: cyan;
+}
+
+footer{
+    margin-top: 2rem;
+}
+
+/* templates/home/index.html.twig */
+.presentation{
+    border: .5rem solid #0b486b;
+    border-radius: 1.5rem;
+    margin-top: 10rem;
+    background-color: rgba(255, 255, 255, 0.828);
+    padding: 2.5rem;
+}
+
+.present{
+    color: #0b486b;
+}
+
+.present:nth-child(1){
+    font-weight: bold;
+}
+
+.present:nth-child(2), .present:nth-child(3), .present:nth-child(4), .present:nth-child(5), .present:nth-child(6){
+    font-size:larger;
+}
+
+.footerHome{
+    margin-top: 16.4rem;
+}
+
+.footerExpe{
+    margin-top: 15rem;
+}
+
+.footerContact{
+    margin-top: 12.8rem;
+}

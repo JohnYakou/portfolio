@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg navbar bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{path('app_home')}}"><i class="fa-solid fa-house"></i></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{path('app_experience')}}">À propos</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{path('app_all_langage')}}">Compétences</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{path('app_all_projet')}}">Mes projets</a>
+        </li>
+
+        {# POUR AFFICHER ET TELECHARGER MON CV EN PDF #}
+        <li class="nav-item">
+          <a class="nav-link" target="_blank" href="{{asset('assets/John_CV.pdf')}}" >C. V.</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{path('app_contact')}}">Contact</a>
+        </li>
+
+        {% if is_granted('ROLE_ADMIN') %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Admin
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{path('app_projet')}}">Ajouter un projet</a></li>
+            <li><a class="dropdown-item" href="{{path('app_langage')}}">Ajouter un langage</a></li>
+            <li><a class="dropdown-item" href="{{path('app_framework')}}">Ajouter un framework</a></li>
+            <li><a class="dropdown-item" href="{{path('app_outil')}}">Ajouter un outil</a></li>
+            <li><a class="dropdown-item" href="{{ path('app_all_message') }}">Messagerie</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{path('app_logout')}}">Déconnexion</a></li>
+          </ul>
+        </li>
+        {% endif %}
+
+      </ul>
+      {# <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form> #}
+    </div>
+  </div>
+</nav>
