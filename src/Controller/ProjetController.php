@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Projet;
+use App\Entity\Projets;
 use App\Form\ProjetType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -67,8 +68,12 @@ class ProjetController extends AbstractController
     {
         $projet = $this->manager->getRepository(Projet::class)->findAll();
 
+        $projets = new Projets;
+        $projets = $this->manager->getRepository(Projets::class)->findAll();
+
         return $this->render('projet/allProjet.html.twig', [
             'projet' => $projet,
+            'projets' => $projets,
         ]);
     }
 

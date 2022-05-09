@@ -2,58 +2,110 @@
 {% block title %}Mes projets{% endblock %} 
 
 {% block body %}
-    <body class="bodyAllLangage">
+    <div class="bodyAllLangage">
         <section class="container">
-            {# <div class="boutonsCompetences">
-                <a type="button" class="btn btn-success m-5" href="#langages">Langages</a>
-                <a type="button" class="btn btn-success m-5" href="#frameworks">Frameworks</a>
-                <a type="button" class="btn btn-success m-5" href="#outils">CMS et outils</a>
-            </div> #}
+            <div class="boutonsCompetences">
+                <a type="button" class="btn btn-success m-5" href="#htmlcss">Projets HTML / CSS</a>
+                <a type="button" class="btn btn-success m-5" href="#symfony">Projets avec lien</a>
+            </div>
 
             <br>
 
-            <h1 class="text-center text-white competence">Projets</h1>
+            <h1 id="htmlcss" class="text-center text-white competence">Projets HTML / CSS</h1>
             
                 <div class="row competences">
-                {% for projet in projet %}
-                <div class="card col-md-2 m-3" style="width: 18rem">
-                    <img
-                    style="width: 150; height: 22.5rem"
-                    src="{{asset('uploads/image/' ~ projet.image)}}"
-                    />
-                    <div class="card-body">
-                    <h5 class="card-title text-center">{{ projet.nom }}</h5>
+                    {% for projet in projet %}
+                    <div class="card col-md-2 m-3" style="width: 18rem">
+                        <img
+                            style="width: 150; height: 22.5rem"
+                            src="{{asset('uploads/image/' ~ projet.image)}}"
+                            alt="image"
+                        />
 
-                    <div class="text-center">
-                        <a
-                        href="{{ path('app_solo_projet', { id: projet.id }) }}"
-                        class="btn btn-success"
-                        target="_blank"
-                        >Voir</a
-                        >
-                    </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{ projet.nom }}</h5>
+
+                            <div class="text-center">
+                                <a
+                                    href="{{ path('app_solo_projet', { id: projet.id }) }}"
+                                    class="btn btn-success"
+                                    target="_blank"
+                                    >Voir</a
+                                >
+                        </div>
                     
-                    {% if is_granted ("ROLE_ADMIN") %}
-                    <div class="d-flex p-3 justify-content-between">
+                            {% if is_granted ("ROLE_ADMIN") %}
+                                <div class="d-flex p-3 justify-content-between">
 
-                        <a 
-                        class="btn btn-danger" 
-                        href="{{ path('app_projet_delete',{id: projet.id}) }}" 
-                        onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce projet ?')"
-                        >Supprimer</a
-                        >
+                                    <a 
+                                        class="btn btn-danger" 
+                                        href="{{ path('app_projet_delete',{id: projet.id}) }}" 
+                                        onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce projet ?')"
+                                        >Supprimer</a
+                                    >
 
-                        <a
-                        href="{{ path('app_projet_edit', { id: projet.id }) }}"
-                        class="btn btn-warning"
-                        >Modifier</a
-                        >
-                    </div>
-                    {% endif %}
+                                    <a
+                                        href="{{ path('app_projet_edit', { id: projet.id }) }}"
+                                        class="btn btn-warning"
+                                        >Modifier</a
+                                    >
+                                </div>
+                            {% endif %}
                     </div>
                 </div>
                 {% endfor %}
         </section>
+
+        {# DEBUT PROJETS #}
+        <section class="container">
+            <br>
+
+            <h1 id="symfony" class="text-center text-white competence">Projets avec lien</h1>
+            
+                <div class="row competences">
+                    {% for projets in projets %}
+                    <div class="card col-md-2 m-3" style="width: 22rem">
+                        <img
+                        style="width: 150; height: 22.5rem"
+                        src="{{asset('uploads/image/' ~ projets.image)}}"
+                        alt="image"
+                        />
+                        <div class="card-body">
+                        <h5 class="card-title text-center">{{ projets.nom }}</h5>
+                        <h5 class="card-title text-center">{{ projets.langage }}</h5>
+                        <a href="{{projets.lien}}" class="btn btn-success d-flex justify-content-evenly" target="_blank">Voir le projet</a>
+
+                        {# <div class="text-center">
+                            <a
+                            href="{{ path('app_solo_projet', { id: projets.id }) }}"
+                            class="btn btn-success"
+                            target="_blank"
+                            >Voir</a
+                            >
+                        </div> #}
+                        
+                        {% if is_granted ("ROLE_ADMIN") %}
+                        <div class="d-flex p-3 justify-content-between">
+
+                            <a 
+                            class="btn btn-danger" 
+                            href="{{ path('app_projets_delete',{id: projets.id}) }}" 
+                            onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce projet ?')"
+                            >Supprimer</a
+                            >
+
+                            {# <a
+                            href="{{ path('app_projet_edit', { id: projet.id }) }}"
+                            class="btn btn-warning"
+                            >Modifier</a
+                            > #}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </section>
+        {# FIN PROJETS #}
 
             <footer style="background:#0b486b">
                 <div class="container">
@@ -68,5 +120,5 @@
                     </div>
                 </div>
             </footer>
-        </body>
+    </div>
 {% endblock %}
