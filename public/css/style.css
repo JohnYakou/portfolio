@@ -3,8 +3,8 @@
     border: 10px solid #0b486b;
     border-radius: 1.5rem;
     font-size: 1.5rem;
-    color: #0b486b;
-    background-color: rgba(255, 255, 255, 0.842);
+    color: #ffdf2b;
+    background-color: #ffdf2bda;
     margin-top: 9.5rem;
     padding: 1.5rem;
 }
@@ -15,23 +15,24 @@
 }
 
 .navbar-toggler{
-    background: rgb(66, 66, 66);
+    background: #ffdf2b;
 }
 
 .pageContact{
     margin-top: 10rem;
     background-color: #0b486bc7;
+    color: #ffdf2b;
     border-radius: 1rem;
 }
 
 .pageContact, .form-control{
     font-weight: bold;
-    color: white;
+    color: #ffdf2b;
 }
 
 /* templates/langage/allLangage.html.twig */
 .bodyAllLangage{
-    background: linear-gradient(black, red);
+    background: black;
 }
 
 .competence{
@@ -58,7 +59,7 @@
 }
 
 .logoFontAwesome:hover{
-    color: cyan;
+    color: #ffdf2b;
 }
 
 footer{
@@ -67,15 +68,17 @@ footer{
 
 /* templates/home/index.html.twig */
 .presentation{
-    border: .5rem solid #0b486b;
+    border: .75rem solid #0b486b;
     border-radius: 1.5rem;
-    margin-top: 10rem;
+    margin-top: 6.25rem;
     background-color: rgba(255, 255, 255, 0.828);
     padding: 2.5rem;
 }
 
 .present{
-    color: #0b486b;
+    color: #ffdf2b;
+    margin-top: 6rem;
+    background: #0b486b;
 }
 
 .present:nth-child(1){
@@ -87,7 +90,8 @@ footer{
 }
 
 .footerHome{
-    margin-top: 16.4rem;
+    margin-top: 5rem;
+    color: #ffdf2b;
 }
 
 .footerExpe{
@@ -95,5 +99,5 @@ footer{
 }
 
 .footerContact{
-    margin-top: 12.8rem;
+    margin-top: 15rem;
 }

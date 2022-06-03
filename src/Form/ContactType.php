@@ -16,11 +16,11 @@ class ContactType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nom', TextType::class, ['attr' => ['class' => 'form-control text-dark', 'placeholder' => 'Nom']])
-            ->add('prenom', TextType::class, ['attr' => ['class' => 'form-control text-dark', 'placeholder' => 'Prénom'], 'label' => 'Prénom'])
-            ->add('email', EmailType::class, ['attr' => ['class' => 'form-control text-dark', 'placeholder' => 'Adresse email']])
-            ->add('message', TextareaType::class, ['attr' => ['class' => 'form-control text-dark', 'placeholder' => 'Écrivez votre message']])
-            ->add('submit', SubmitType::class, ['attr' => ['class' => 'btn btn-primary mt-3'], 'label' => 'Envoyez le message'])
+            ->add('nom', TextType::class, ['attr' => ['class' => 'form-control text-dark my-2', 'placeholder' => 'Nom']])
+            ->add('prenom', TextType::class, ['attr' => ['class' => 'form-control text-dark my-2', 'placeholder' => 'Prénom'], 'label' => 'Prénom'])
+            ->add('email', EmailType::class, ['attr' => ['class' => 'form-control text-dark my-2', 'placeholder' => 'Adresse email']])
+            ->add('message', TextareaType::class, ['attr' => ['class' => 'form-control text-dark my-2', 'placeholder' => 'Écrivez votre message']])
+            ->add('submit', SubmitType::class, ['attr' => ['class' => 'btn btn-primary mt-3 my-4'], 'label' => 'Envoyez le message'])
         ;
     }
 
