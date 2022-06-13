@@ -15,22 +15,23 @@
             
                 <div class="row competences">
                     {% for projet in projet %}
-                    <div class="card col-md-2 m-3" style="width: 18rem">
+                    <div class="card col-md-2 m-3" style="width: 18rem; background:#0b486b">
                         <img
+							class="my-3"
                             style="width: 150; height: 22.5rem"
                             src="{{asset('uploads/image/' ~ projet.image)}}"
                             alt="image"
                         />
 
                         <div class="card-body">
-                            <h5 class="card-title text-center">{{ projet.nom }}</h5>
+                            <h5 class="card-title text-center colorLangComp">{{ projet.nom }}</h5>
 
                             <div class="text-center">
                                 <a
                                     href="{{ path('app_solo_projet', { id: projet.id }) }}"
-                                    class="btn btn-success"
+                                    class="btn btn-success my-3"
                                     target="_blank"
-                                    >Voir</a
+                                    >Voir le projet</a
                                 >
                         </div>
                     
@@ -54,6 +55,7 @@
                     </div>
                 </div>
                 {% endfor %}
+				</div>
         </section>
 
         {# DEBUT PROJETS #}
@@ -64,25 +66,26 @@
             
                 <div class="row competences">
                     {% for projets in projets %}
-                    <div class="card col-md-2 m-3" style="width: 22rem">
+                    <div class="card col-md-2 m-3" style="width: 22rem; background:#0b486b">
                         <img
-                        style="width: 150; height: 22.5rem"
-                        src="{{asset('uploads/image/' ~ projets.image)}}"
-                        alt="image"
+							class="my-3"
+							style="width: 150; height: 22.5rem"
+							src="{{asset('uploads/image/' ~ projets.image)}}"
+							alt="image"
                         />
-                        <div class="card-body">
-                        <h5 class="card-title text-center">{{ projets.nom }}</h5>
-                        <h5 class="card-title text-center">{{ projets.langage }}</h5>
-                        <a href="{{projets.lien}}" class="btn btn-success d-flex justify-content-evenly" target="_blank">Voir le projet</a>
+                        <div class="card-body text-center">
+							<h5 class="card-title my-2 colorLangComp">{{ projets.nom }}</h5>
+							<h5 class="card-title my-3 colorLangComp">{{ projets.langage }}</h5>
+							<a href="{{projets.lien}}" class="btn btn-success my-2" target="_blank">Voir le projet</a>
 
-                        {# <div class="text-center">
+                         {#<div class="text-center">
                             <a
                             href="{{ path('app_solo_projet', { id: projets.id }) }}"
                             class="btn btn-success"
                             target="_blank"
-                            >Voir</a
+                            >Voir le projet</a
                             >
-                        </div> #}
+                        </div>#}
                         
                         {% if is_granted ("ROLE_ADMIN") %}
                         <div class="d-flex p-3 justify-content-between">
@@ -104,15 +107,16 @@
                     </div>
                 </div>
             {% endfor %}
+			</div>
         </section>
         {# FIN PROJETS #}
 
             <footer style="background:#0b486b">
                 <div class="container">
-                    <div class="d-flex justify-content-evenly">
-                        <p class="text-center text-white"><strong>© YAKOU John | Tous droits réservés</strong></p>
+                    <div class="d-flex justify-content-evenly py-1">
+                        <p class="text-center my-2 footerProjet"><strong>© YAKOU John | Tous droit réservés</strong></p>
 
-                        <div class="d-flex justify-content-between">
+                        <div>
                             <a type="button" href="https://github.com/JohnYakou?tab=repositories" target="_blank"><i class="fa-brands fa-github-square logoFontAwesome"></i></a>
 
                             <a type="button" href="https://www.linkedin.com/in/john-yakou-8633b41a1/" target="_blank"><i class="fa-brands fa-linkedin logoFontAwesome"></i></a>
@@ -120,5 +124,5 @@
                     </div>
                 </div>
             </footer>
-    </div>
+    	</div>
 {% endblock %}

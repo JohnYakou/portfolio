@@ -3,15 +3,24 @@
     border: 10px solid #0b486b;
     border-radius: 1.5rem;
     font-size: 1.5rem;
-    color: #ffdf2b;
-    background-color: #ffdf2bda;
-    margin-top: 9.5rem;
+    color: #ffdf2bda;
+    background-color: #0b486bc7;
+    margin-top: 13.5rem;
     padding: 1.5rem;
 }
 
+nav{
+	background:#0b486b;
+}
+
 .nav-link{
-    color: white;
+    color: #ffdf2b;
     font-size: 1.2rem;
+}
+
+.nav-link:hover{
+	color: #0b486b;
+	background-color: #ffdf2b;
 }
 
 .navbar-toggler{
@@ -19,20 +28,19 @@
 }
 
 .pageContact{
-    margin-top: 10rem;
+    margin-top: 12rem;
     background-color: #0b486bc7;
-    color: #ffdf2b;
     border-radius: 1rem;
 }
 
 .pageContact, .form-control{
     font-weight: bold;
-    color: #ffdf2b;
+    color: white;
 }
 
 /* templates/langage/allLangage.html.twig */
 .bodyAllLangage{
-    background: black;
+    background-color: #0b486bde;
 }
 
 .competence{
@@ -50,16 +58,16 @@
 }
 
 .progress-bar{
-    background: #3BFF23;
+    background: #f1d329;
 }
 
 .logoFontAwesome{
     font-size: 2.5rem;
-    color: white;
+    color: #ffdf2b;
 }
 
 .logoFontAwesome:hover{
-    color: #ffdf2b;
+	color: #2a5f7e;
 }
 
 footer{
@@ -68,7 +76,7 @@ footer{
 
 /* templates/home/index.html.twig */
 .presentation{
-    border: .75rem solid #0b486b;
+    border: .5rem solid #0b486b;
     border-radius: 1.5rem;
     margin-top: 6.25rem;
     background-color: rgba(255, 255, 255, 0.828);
@@ -77,8 +85,8 @@ footer{
 
 .present{
     color: #ffdf2b;
-    margin-top: 6rem;
-    background: #0b486b;
+	margin-top: 6rem;
+	background: #0b486b;
 }
 
 .present:nth-child(1){
@@ -89,15 +97,34 @@ footer{
     font-size:larger;
 }
 
+.carte-langage{
+	width:15rem;
+	height:20rem;
+}
+
+.colorLangComp{
+	color:#ffdf2b;
+}
+
 .footerHome{
     margin-top: 5rem;
-    color: #ffdf2b;
+	color: #ffdf2b;
 }
 
 .footerExpe{
-    margin-top: 15rem;
+    margin-top: 9rem;
+	color: #ffdf2b;
+}
+
+.footerLang{
+	color: #ffdf2b;
+}
+
+.footerProjet{
+	color: #ffdf2d;
 }
 
 .footerContact{
-    margin-top: 15rem;
+    margin-top: 13rem;
+	color: #ffdf2b;
 }

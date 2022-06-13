@@ -3,26 +3,26 @@
 {% block title %}Bienvenue{% endblock %}
 
 {% block body %}
-    <div style="background-image: url({{ asset('assets/macbook.jpg') }}); background-size:cover; background-reapeat:no-repeat">
+    <section style="background-image: url({{ asset('assets/macbook.jpg') }}); background-size:cover; background-repeat:no-repeat">
         <div class="container">
             <div class="row">
                 <div style="background-image: url({{ asset('assets/capuche.webp') }}); background-size:cover; height:50rem" class="presentation">
-                    <h3  class="text-center present">Développeur / intégrateur web junior</h3>
-                    {# <br> #}
+                    <h3 class="text-center present">Développeur / Intégrateur Web Junior</h3>
                     <p class="text-center present"><strong>NOM :</strong> YAKOU</p>
                     <p class="text-center present"><strong>PRÉNOM :</strong> John</p>
-                    <p class="text-center present"><strong>ÂGE :</strong> 23 ans</p>
+                    <p class="text-center present"><strong>NAISSANCE :</strong> 01/04/1999</p>
                     <p class="text-center present"><strong>EMAIL :</strong> jyakou@gmx.fr</p>
                 </div>
             </div>
         </div>
     
-        <footer class="footerHome" style="background:#0b486b">
+
+        <footer class="footerHome py-1" style="background:#0b486b">
             <div class="container">
                 <div class="d-flex justify-content-evenly">
-                    <p class="text-center"><strong>© YAKOU John | Tous droits réservés</strong></p>
+                    <p class="text-center my-2"><strong>© YAKOU John | Tous droits réservés</strong></p>
 
-                    <div class="d-flex justify-content-between">
+                    <div>
                         <a type="button" href="https://github.com/JohnYakou?tab=repositories" target="_blank"><i class="fa-brands fa-github-square logoFontAwesome"></i></a>
 
                         <a type="button" href="https://www.linkedin.com/in/john-yakou-8633b41a1/" target="_blank"><i class="fa-brands fa-linkedin logoFontAwesome"></i></a>
@@ -30,5 +30,5 @@
                 </div>
             </div>
         </footer>
-</div>
+	</section>
 {% endblock %}
