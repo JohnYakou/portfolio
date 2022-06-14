@@ -9,11 +9,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 
 class ContactController extends AbstractController
 {
-    public function __construct(EntityManagerInterface $manager){
+    public function __construct(EntityManagerInterface $manager, FlashBagInterface $flash){
         $this->manager = $manager;
+        $this->flash = $flash;
     }
 
     /**
@@ -29,8 +31,9 @@ class ContactController extends AbstractController
         if($form->isSubmitted() && $form->isValid()){
             $this->manager->persist($contact);
             $this->manager->flush();
+            $this->flash->add('success', 'Votre message a été envoyé');
 
-            return $this->redirectToRoute('app_home');
+            return $this->redirectToRoute('app_contact');
         }
         
         return $this->render('contact/index.html.twig', [

@@ -20,7 +20,7 @@ class ContactType extends AbstractType
             ->add('prenom', TextType::class, ['attr' => ['class' => 'form-control text-dark my-2', 'placeholder' => 'Prénom'], 'label' => 'Prénom'])
             ->add('email', EmailType::class, ['attr' => ['class' => 'form-control text-dark my-2', 'placeholder' => 'Adresse email']])
             ->add('message', TextareaType::class, ['attr' => ['class' => 'form-control text-dark my-2', 'placeholder' => 'Écrivez votre message']])
-            ->add('submit', SubmitType::class, ['attr' => ['class' => 'btn btn-primary mt-3 my-4', 'onclick'=>"return confirm('Envoyez votre message ?')"], 'label' => 'Envoyez le message', ])
+            ->add('submit', SubmitType::class, ['attr' => ['class' => 'btn btn-primary mt-3 my-4', 'onclick'=>"return react('Envoyez votre message ?')"], 'label' => 'Envoyez le message', ])
         ;
     }
 
